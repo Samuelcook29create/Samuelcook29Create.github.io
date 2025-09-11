@@ -1,0 +1,12 @@
+body {
+    --text: #00fff7;
+--background: #000000;
+--primary: #002dd1;
+--secondary: #00aaff;
+--accent: #1ce154;
+
+}
+
+p {
+    color: var(--text);
+}
