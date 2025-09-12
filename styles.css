@@ -7,6 +7,17 @@ body {
 
 }
 
-p {
+p,
+h1,
+h2,
+h3,
+h4,
+ol,
+ul,
+li,
+h5 {
     color: var(--text);
+}
+body{
+   background-color: var(--background)
 }
