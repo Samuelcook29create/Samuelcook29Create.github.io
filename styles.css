@@ -18,9 +18,15 @@ h5 {
     color: var(--text);
 }
 body{
-   background-color: var(--background)
+   background-color: var(--background);
 }
 
 h1 {
     color: var(--primary)
+}
+
+.glow{
+    color: #fff; /* Base text color */
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+    font-family: Arial, sans-serif;
 }
