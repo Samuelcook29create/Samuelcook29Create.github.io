@@ -17,7 +17,14 @@ h1 {
 }
 
 .glow{
-    color: var(--secondary);
+    color: var(--text);
     font-family: audiowide;
+    text-shadow: 1px .5px 5px #ffffff 
+}
 
+img {
+    padding:4px;
+    border:4px solid var(--accent);
+    border-radius:16px;
+    background: var(--secondary)
 }
