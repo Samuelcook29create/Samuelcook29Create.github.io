@@ -1,32 +1,23 @@
-body {
+html{
     --text: #00fff7;
 --background: #000000;
 --primary: #002dd1;
 --secondary: #00aaff;
 --accent: #1ce154;
-
 }
 
-p,
-h2,
-h3,
-h4,
-ol,
-ul,
-li,
-h5 {
-    color: var(--text);
-}
 body{
    background-color: var(--background);
+   color: var(--text)
 }
 
 h1 {
-    color: var(--primary)
+    color: var(--primary);
+    font-family: kenia;
 }
 
 .glow{
-    color: #fff; /* Base text color */
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
-    font-family: Arial, sans-serif;
+    color: var(--secondary);
+    font-family: audiowide;
+
 }
