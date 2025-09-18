@@ -13,13 +13,14 @@ body{
 
 h1 {
     color: var(--primary);
-    font-family: kenia;
+    font-family: "Kenia";
+    text-shadow: 1px .5px 3px var(--accent);
 }
 
 .glow{
     color: var(--text);
-    font-family: audiowide;
-    text-shadow: 1px .5px 5px #ffffff 
+    font-family: "Audiowide";
+    text-shadow: 1px .5px 2.5px #ffffff 
 }
 
 img {
