@@ -18,7 +18,8 @@ h1 {
 }
 
 .glow,
-ul{
+ul,
+li{
     color: var(--text);
     font-family: "Audiowide";
     text-shadow: 1px .5px 2.5px #ffffff 
