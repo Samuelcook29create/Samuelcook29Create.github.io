@@ -39,4 +39,5 @@ p {
     font-family: "Audiowide";
     font-style: italic;
     font-weight: bolder;
+    text-decoration: underline overline red
 }
