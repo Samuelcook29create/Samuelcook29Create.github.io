@@ -16,7 +16,17 @@ h1 {
     font-family: "Kenia";
     text-shadow: 1px .5px 3px var(--accent);
     font-size: 50px;
+    min-width: 400px;
+    margin: 10px
 }
+
+
+.flex {
+    display: flex;
+    align-items: center;
+    border: 5px solid #24f1b4;
+}
+
 
 .glow {
     color: var(--text);
@@ -39,5 +49,17 @@ p {
     font-family: "Audiowide";
     font-style: italic;
     font-weight: bolder;
-    text-decoration: underline overline red
+    text-decoration: underline overline rgb(143, 22, 241)
+}
+
+
+a {
+    color: var(--text);
+    border: 2px solid indianred;
+    font-family: "Kenia";
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
