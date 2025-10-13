@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-    color: var(--primary);
+    color: var(--secondary);
     font-family: "Kenia";
     text-shadow: 1px .5px 3px var(--accent);
     font-size: 50px;
