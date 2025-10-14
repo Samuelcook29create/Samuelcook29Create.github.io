@@ -16,7 +16,6 @@ h1 {
     font-family: "Kenia";
     text-shadow: 1px .5px 3px var(--accent);
     font-size: 50px;
-    min-width: 400px;
     margin: 10px
 }
 
@@ -24,18 +23,11 @@ h1 {
 .flex {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    align-items: space-around;
+    min-width: 500px;
     border: 5px solid #24f1b4;
-}
-
-
-.glow {
-    color: var(--text);
-    font-family: "Kenia";
-    text-shadow: 1px 1px 3px var(--secondary)
-}
-
-.box {
-    filter: drop-shadow(1px 2px 5px)
+    padding-bottom: 10px;
 }
 
 img {
@@ -62,4 +54,20 @@ a {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.black {
+    color: black;
+    text-decoration: underline overline black;
+}
+
+h2 {
+    color: #00ffd5;
+    text-shadow: 2px 1px 3px white
+}
+
+.describe {
+    display: flex;
+    text-decoration: underline overline black;
+    /* flex-wrap: wrap; */
 }
