@@ -32,17 +32,34 @@
         <li>5</li>
         <li>6</li>
     </ul>
-    <p>🎈</p>
-<button id="inflate">INFLATE</button>
-<button id="deflate">DEFLATE</button>
-<script>
-let inflate=document.getElementById("inflate")
-function inflate(){
-    if(event.key=="i"){
-        inflate.style.fontsize+=10px
-    }
-}
-</script>
+    <p id="ballon">🎈</p>
+    <button id="inflate-button">INFLATE</button>
+    <button id="deflate-button">DEFLATE</button>
+    <button id="new-button">NEW BALLON(work in progress)</button>
+    <script>
+        let fontSize = 10;
+        let ballonEl = document.getElementById("ballon");
+        let inflateButton = document.getElementById("inflate-button");
+        let deflateButton = document.getElementById("deflate-button");
+        function Inflate(event) {
+            if (fontSize > 100) {
+                ballonEl.textContent = "💥"
+            } else {
+                fontSize *= 1.1;
+                ballonEl.style.fontSize = fontSize + "px";
+            }
+
+
+        }
+        function Deflate(event) {
+            if (event.button == 0) {
+                fontSize /= 1.1;
+                ballonEl.style.fontSize = fontSize + "px";
+            }
+        }
+        inflateButton.addEventListener("click", Inflate);
+        deflateButton.addEventListener("click", Deflate);
+    </script>
     <audio controls src="Audio/sam_song.wav" class="box"></audio>
     <img src="Pictures/treeredwood.jpg" alt="redwood tree">
 
