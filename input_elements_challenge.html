@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Element Challenge</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        section {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        button {
+            margin-top: 1rem;
+        }
+
+        .output {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Input Element Challenge</h1>
+
+    <section id="part1">
+        <h2>Part 1: Text and Number Inputs</h2>
+        <label>
+            Name:
+            <input id="nameInput" type="text" placeholder="Enter your name">
+        </label>
+        <label>
+            Age:
+            <input id="ageInput" type="number" min="0" max="120">
+        </label>
+        <button id="btnGreet">Greet Me</button>
+        <div class="output" id="greetingOutput"></div>
+    </section>
+
+    <section id="part2">
+        <h2>Part 2: Color and Range Inputs</h2>
+        <label>
+            Favorite Color:
+            <input id="colorInput" type="color" value="#00AAFF">
+        </label>
+        <label>
+            Volume:
+            <input id="volumeInput" type="range" min="0" max="100" value="50">
+        </label>
+        <div class="output" id="colorOutput">favorite color?</div>
+    </section>
+
+    <section id="part3">
+        <h2>Part 3: Checkbox and Radio Buttons</h2>
+        <label><input type="checkbox" id="subscribeBox"> Subscribe to newsletter</label>
+        <p>Pick a mode:</p>
+        <label><input type="radio" name="mode" value="Light"> Light</label>
+        <label><input type="radio" name="mode" value="Dark"> Dark</label>
+        <label><input type="radio" name="mode" value="System" checked> System</label>
+        <button id="btnSubmit">Submit</button>
+        <div class="output" id="modeOutput"></div>
+    </section>
+
+    <script>
+        // --- PART 1 ---
+        const nameInput = document.getElementById("nameInput");
+        const ageInput = document.getElementById("ageInput");
+        const btnGreet = document.getElementById("btnGreet");
+        const greetingOutput = document.getElementById("greetingOutput");
+
+        btnGreet.addEventListener("click", () => {
+            if (ageInput.value < 13) {
+                greetingOutput.textContent = "Hello " + nameInput.value + " You're just a kid thats's " + ageInput.value
+            }
+            else {
+                greetingOutput.textContent = "Hello " + nameInput.value + " You're " + ageInput.value + " years old!"
+            }
+        });
+
+        // --- PART 2 ---
+        const colorInput = document.getElementById("colorInput");
+        const volumeInput = document.getElementById("volumeInput");
+        const colorOutput = document.getElementById("colorOutput");
+
+       function color(){
+        document.backgroundcolor = colorInput
+       }
+        // Challenge: Also display the hex code and volume value dynamically.
+
+        // --- PART 3 ---
+        const subscribeBox = document.getElementById("subscribeBox");
+        const btnSubmit = document.getElementById("btnSubmit");
+        const modeOutput = document.getElementById("modeOutput");
+
+        btnSubmit.addEventListener("click", () => {
+            // TODO: Find which radio button is checked and display it.
+            // Challenge: Include whether the user subscribed or not.
+        });
+    </script>
+</body>
+
+</html>
