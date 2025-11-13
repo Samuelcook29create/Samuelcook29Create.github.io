@@ -29,6 +29,14 @@
             margin-top: 1rem;
             font-weight: bold;
         }
+
+        #round {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(83, 83, 88);
+            border-radius: 50%;
+
+        }
     </style>
 </head>
 
@@ -60,6 +68,7 @@
             <input id="volumeInput" type="range" min="0" max="100" value="50">
         </label>
         <div class="output" id="colorOutput">favorite color?</div>
+        <div id="round"></div>
     </section>
 
     <section id="part3">
@@ -93,10 +102,22 @@
         const colorInput = document.getElementById("colorInput");
         const volumeInput = document.getElementById("volumeInput");
         const colorOutput = document.getElementById("colorOutput");
+        const circle = document.getElementById("circlebtn")
+        const Round = document.getElementById("round")
 
-       function color(){
-        document.backgroundcolor = colorInput
-       }
+        function color() {
+            Round.style.backgroundColor = colorInput.value
+        }
+        function size() {
+
+            Round.style.scale = volumeInput.value * .06;
+
+        }
+        volumeInput.addEventListener("input", size)
+        colorInput.addEventListener("input", color)
+
+
+
         // Challenge: Also display the hex code and volume value dynamically.
 
         // --- PART 3 ---
@@ -104,10 +125,13 @@
         const btnSubmit = document.getElementById("btnSubmit");
         const modeOutput = document.getElementById("modeOutput");
 
-        btnSubmit.addEventListener("click", () => {
+        function mode(){
+            document.style.backgroundColor
+        }
+
             // TODO: Find which radio button is checked and display it.
             // Challenge: Include whether the user subscribed or not.
-        });
+        
     </script>
 </body>
 
