@@ -75,10 +75,9 @@
         <h2>Part 3: Checkbox and Radio Buttons</h2>
         <label><input type="checkbox" id="subscribeBox"> Subscribe to newsletter</label>
         <p>Pick a mode:</p>
-        <label><input type="radio" name="mode" value="Light"> Light</label>
-        <label><input type="radio" name="mode" value="Dark"> Dark</label>
-        <label><input type="radio" name="mode" value="System" checked> System</label>
-        <button id="btnSubmit">Submit</button>
+        <label><input type="radio" name="mode" value="Light" id="lightMode"> Light</label>
+        <label><input type="radio" name="mode" value="Dark" id="darkMode"> Dark</label>
+        <label><input type="radio" name="mode" id="systemMode" value="System" checked> System</label>
         <div class="output" id="modeOutput"></div>
     </section>
 
@@ -124,14 +123,31 @@
         const subscribeBox = document.getElementById("subscribeBox");
         const btnSubmit = document.getElementById("btnSubmit");
         const modeOutput = document.getElementById("modeOutput");
+        const lightMode = document.getElementById("lightMode");
+        const darkMode = document.getElementById("darkMode");
+        const systemMode = document.getElementById("systemMode");
+        function mode(event) {
+            if (event.target.checked) {
+                if (event.target.value == "Light") {
+                    document.body.style.backgroundColor = "white";
+                    document.body.style.color = "black"
+                }
+                else if (event.target.value == "Dark") {
 
-        function mode(){
-            document.style.backgroundColor
+                    document.body.style.backgroundColor = "black";
+                    document.body.style.color = "white";
+                }
+                // else if (value = system) {
+                //     document.body.style.backgroundColor;
+                // }
+            }
         }
+        lightMode.addEventListener("input", mode);
+        darkMode.addEventListener("input", mode);
+        systemMode.addEventListener("input", mode);
+        // TODO: Find which radio button is checked and display it.
+        // Challenge: Include whether the user subscribed or not.
 
-            // TODO: Find which radio button is checked and display it.
-            // Challenge: Include whether the user subscribed or not.
-        
     </script>
 </body>
 
