@@ -35,12 +35,13 @@
     <p id="ballon">🎈</p>
     <button id="inflate-button">INFLATE</button>
     <button id="deflate-button">DEFLATE</button>
-    <button id="new-button" onclick(Ballon)>NEW BALLON(work in progress)</button>
+    <button id="new-button">NEW BALLON(work in progress)</button>
     <script>
         let fontSize = 10;
         let ballonEl = document.getElementById("ballon");
         let inflateButton = document.getElementById("inflate-button");
         let deflateButton = document.getElementById("deflate-button");
+        let newBallon = document.getElementById("new-button")
         function Inflate(event) {
             if (fontSize > 100) {
                 ballonEl.textContent = "💥"
@@ -52,15 +53,17 @@
 
         }
         function Deflate(event) {
-            if (fontSize <= 100) {
+            if (fontSize < 100) {
                 fontSize /= 1.1;
                 ballonEl.style.fontSize = fontSize + "px";
             }
         }
         function Ballon() {
             ballonEl.textContent = "🎈";
-            ballonEl.style.fontSize = 10;
+            ballonEl.fontSize=10
+            
         }
+        newBallon.addEventListener("click", Ballon)
         inflateButton.addEventListener("click", Inflate);
         deflateButton.addEventListener("click", Deflate);
     </script>
