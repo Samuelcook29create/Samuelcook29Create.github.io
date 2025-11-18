@@ -44,7 +44,9 @@
         let newBallon = document.getElementById("new-button")
         function Inflate(event) {
             if (fontSize > 100) {
-                ballonEl.textContent = "💥"
+                ballonEl.textContent = "💥";
+                inflateButton.removeEventListener("click", Inflate);
+                deflateButton.removeEventListener("click", Deflate);
             } else if (fontSize < 100) {
                 fontSize *= 1.1;
                 ballonEl.style.fontSize = fontSize + "px";
@@ -53,15 +55,16 @@
 
         }
         function Deflate(event) {
-            if (fontSize < 100) {
                 fontSize /= 1.1;
                 ballonEl.style.fontSize = fontSize + "px";
             }
-        }
+        
         function Ballon() {
             ballonEl.textContent = "🎈";
-            ballonEl.fontSize=10
-            
+            ballonEl.style.fontSize = fontSize + "px";
+            ballonEl.style.fontSize=10;
+            inflateButton.addEventListener("click", Inflate);
+            deflateButton.addEventListener("click", Deflate);
         }
         newBallon.addEventListener("click", Ballon)
         inflateButton.addEventListener("click", Inflate);
