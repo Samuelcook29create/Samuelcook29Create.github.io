@@ -13,37 +13,38 @@
     <h1>Hello and welcome</h1>
     <h2>There are multiple challenges in this document you will find fun</h2>
     <section>
-        <h2>Game 1: sentence generator</h2>
+        <h2>Game 1: Yoda sentence generator</h2>
+        <p>try to make a sentence with words in a mixed up order, or make a yoda sentence</p>
         <div>
             <label>
                 multiple words:
-                <input type="text">
+                <input type="text" id="word1">
             </label>
         </div>
         <div>
             <label>
                 multiple words:
-                <input type="text">
+                <input type="text" id="word2">
             </label>
         </div>
         <div>
             <label>
                 multiple words:
-                <input type="text">
+                <input type="text" id="word3">
             </label>
         </div>
         <div>
             <label>
                 multiple words:
-                <input type="text">
+                <input type="text" id="word4">
             </label>
         </div>
         <div>
-            <button>
+            <button id="generatebtn">
                 Generate sentence
             </button>
         </div>
-        <div class="output">here</div>
+        <div class="output" id="wordoutput"></div>
 
     </section>
     <section>
@@ -59,7 +60,7 @@
                 Light Mode
             </div>
             <div>
-                <input type="color" value="00AAFF">
+                <input type="color" >
             </div>
             Choose your own background color
         </div>
