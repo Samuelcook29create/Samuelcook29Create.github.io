@@ -11,6 +11,8 @@ generateBtn.addEventListener("click", generate);
 
 const darkMode = document.getElementById("dark-mode");
 const lightMode = document.getElementById("light-mode");
+const multiColor = document.getElementById("multicolor");
+
 function background(event) {
     if (event.target.checked) {
         if (event.target.value == "light") {
@@ -22,7 +24,15 @@ function background(event) {
             document.body.style.color = "white";
         }
     }
+
+}
+function custombackground() {
+    document.body.style.backgroundColor = multiColor.value;
+
 }
 
+
+
+multiColor.addEventListener("input", custombackground);
 darkMode.addEventListener("input", background);
 lightMode.addEventListener("input", background);
