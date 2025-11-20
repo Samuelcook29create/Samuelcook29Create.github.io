@@ -36,3 +36,16 @@ function custombackground() {
 multiColor.addEventListener("input", custombackground);
 darkMode.addEventListener("input", background);
 lightMode.addEventListener("input", background);
+
+
+let happy = document.getElementById("happyface");
+let sad = document.getElementById("sadface");
+let niceBtn = document.getElementById("nice-btn");
+let People = document.getElementById("people");
+let count = 0
+function nice(event) {
+    count += 1;
+    People.textContent = count;
+    console.log("clicked");
+}
+niceBtn.addEventListener("click", nice);
