@@ -42,10 +42,32 @@ let happy = document.getElementById("happyface");
 let sad = document.getElementById("sadface");
 let niceBtn = document.getElementById("nice-btn");
 let People = document.getElementById("people");
-let count = 0
+let count = 0;
+let Letter = document.getElementById("letter")
 function nice(event) {
-    count += 1;
-    People.textContent = count;
-    console.log("clicked");
+    if (happy.hidden) {
+        count += 1;
+        People.textContent = count;
+        happy.hidden = false;
+        sad.hidden = true;
+    }
+    setTimeout(() => {
+        sad.hidden = false;
+        happy.hidden = true;
+    }, 400);
 }
 niceBtn.addEventListener("click", nice);
+
+function letters(event){
+    if(count>100){
+        if(Letter.hidden){
+            Letter.hidden=false;
+        }
+        else{
+            setInterval(() => {
+                count+=1
+            }, 1000);
+        }
+    }
+}
+Letter.addEventListener("click", letters)
