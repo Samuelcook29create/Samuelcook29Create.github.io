@@ -43,10 +43,13 @@ let sad = document.getElementById("sadface");
 let niceBtn = document.getElementById("nice-btn");
 let People = document.getElementById("people");
 let count = 0;
+let persecond = document.getElementById("persecond-btn");
+let doubleclickBtn = document.getElementById("doubleclick-btn");
+let extraclick = 0;
 
 function nice(event) {
     if (happy.hidden) {
-        count += 1;
+        count += 1 + extraclick;
         People.textContent = count;
         happy.hidden = false;
         sad.hidden = true;
@@ -57,25 +60,55 @@ function nice(event) {
     }, 400);
 }
 niceBtn.addEventListener("click", nice);
-let Letter = document.getElementById("letter");
+
 
 function upgradeshow1(event) {
-    if (count > 99) {
-        if (Letter.hidden) {
-            Letter.hidden = false;
+    if (count > 19) {
+        if (doubleclickBtn.hidden) {
+            doubleclickBtn.hidden = false;
         }
     }
 }
-function letterpersecond(event) {
 
+function upgradeshow2(event) {
+    if (count > 99) {
+        if (persecond.hidden) {
+            persecond.hidden = false;
+        }
+    }
+    // else if(count<101){
+    // if(!Letter.hidden){
+    // Ledder.hidden = true;
+    // }
+    // }
+}
+function doubleclicks() {
+    if (count > 19) {
+        setTimeout(() => {
+            count -= 20;
+            People.textContent = count;
+        }, 0);
+        extraclick += 1;
+
+    }
+
+}
+
+function letterpersecond(event) {
     setTimeout(() => {
-        count -= 100
+        count -= 100;
     }, 0);
     setInterval(() => {
         count += 1;
         People.textContent = count;
     }, 1000);
+    if (!persecond.hidden) {
+        persecond.hidden = true;
+        // niceBtn.removeEventListener("click", upgradeshow2)
+    }
 
 }
 niceBtn.addEventListener("click", upgradeshow1);
-Letter.addEventListener("click", letterpersecond)
+niceBtn.addEventListener("click", upgradeshow2);
+doubleclickBtn.addEventListener("click", doubleclicks);
+persecond.addEventListener("click", letterpersecond);
