@@ -43,7 +43,7 @@ let sad = document.getElementById("sadface");
 let niceBtn = document.getElementById("nice-btn");
 let People = document.getElementById("people");
 let count = 0;
-let Letter = document.getElementById("letter")
+
 function nice(event) {
     if (happy.hidden) {
         count += 1;
@@ -57,17 +57,25 @@ function nice(event) {
     }, 400);
 }
 niceBtn.addEventListener("click", nice);
+let Letter = document.getElementById("letter");
 
-function letters(event){
-    if(count>100){
-        if(Letter.hidden){
-            Letter.hidden=false;
-        }
-        else{
-            setInterval(() => {
-                count+=1
-            }, 1000);
+function upgradeshow1(event) {
+    if (count > 99) {
+        if (Letter.hidden) {
+            Letter.hidden = false;
         }
     }
 }
-Letter.addEventListener("click", letters)
+function letterpersecond(event) {
+
+    setTimeout(() => {
+        count -= 100
+    }, 0);
+    setInterval(() => {
+        count += 1;
+        People.textContent = count;
+    }, 1000);
+
+}
+niceBtn.addEventListener("click", upgradeshow1);
+Letter.addEventListener("click", letterpersecond)
