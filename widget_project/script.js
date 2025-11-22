@@ -46,6 +46,10 @@ let count = 0;
 let persecond = document.getElementById("persecond-btn");
 let doubleclickBtn = document.getElementById("doubleclick-btn");
 let extraclick = 0;
+let extrapersecond = 0;
+const viewupgradeBtn = document.getElementById("viewupgrade-btn");
+let doubleclickError = document.getElementById("doubleclick-error");
+let persecondError = document.getElementById("persecond-error");
 
 function nice(event) {
     if (happy.hidden) {
@@ -76,39 +80,35 @@ function upgradeshow2(event) {
             persecond.hidden = false;
         }
     }
-    // else if(count<101){
-    // if(!Letter.hidden){
-    // Ledder.hidden = true;
-    // }
-    // }
 }
+
 function doubleclicks() {
     if (count > 19) {
+        doubleclickError.textContent = "";
         setTimeout(() => {
             count -= 20;
             People.textContent = count;
         }, 0);
         extraclick += 1;
-
     }
-
+    else if (count < 20) {
+        doubleclickError.textContent = "You don't have enough score to buy this upgrade!";
+    }
 }
 
 function letterpersecond(event) {
-    setTimeout(() => {
-        count -= 100;
-    }, 0);
-    setInterval(() => {
-        count += 1;
-        People.textContent = count;
-    }, 1000);
-    if (!persecond.hidden) {
-        persecond.hidden = true;
-        // niceBtn.removeEventListener("click", upgradeshow2)
+    if (count > 99) {
+        setTimeout(() => {
+            count -= 100;
+            extrapersecond += 1;
+        }, 0);
+        setInterval(() => {
+            count += 1 + extrapersecond;
+            People.textContent = count;
+        }, 1000);
     }
-
 }
-niceBtn.addEventListener("click", upgradeshow1);
-niceBtn.addEventListener("click", upgradeshow2);
+viewupgradeBtn.addEventListener("click", upgradeshow1);
+viewupgradeBtn.addEventListener("click", upgradeshow2);
 doubleclickBtn.addEventListener("click", doubleclicks);
 persecond.addEventListener("click", letterpersecond);
