@@ -51,11 +51,7 @@ let viewupgradeBtn = document.getElementById("viewupgrade-btn");
 let doubleclickError = document.getElementById("doubleclick-error");
 let persecondError = document.getElementById("persecond-error");
 let viewupgradeError = document.getElementById("viewupgrade-error");
-let upgradeOn1 = false;
-let upgradeOn2 = false;
-let upgradeOn3 = false;
-let upgradeOn4 = false;
-let upgradeOn5 = false;
+let upgradeOn = false;
 
 function nice(event) {
     if (happy.hidden) {
@@ -78,7 +74,7 @@ function upgradeshow1(event) {
         if (doubleclickBtn.hidden) {
             doubleclickBtn.hidden = false;
         }
-        upgradeOn1 = true;
+        upgradeOn = true;
     }
 }
 
@@ -87,7 +83,7 @@ function upgradeshow2(event) {
         if (persecond.hidden) {
             persecond.hidden = false;
         }
-        upgradeOn2 = true;
+        // upgradeOn = true;
     }
 }
 
@@ -101,7 +97,7 @@ function doubleclicks() {
         extraclick += 1;
     }
     else if (count < 20) {
-        doubleclickError.textContent = "You don't have enough score to buy this upgrade!";
+        doubleclickError.textContent = "You don't have enough smiles to buy this upgrade!";
     }
 }
 
@@ -116,20 +112,22 @@ function letterpersecond(event) {
             People.textContent = count;
         }, 1000);
     } else if (count < 100) {
-        persecondError.textContent = "You don't have enough score to buy this upgrade!";
+        persecondError.textContent = "You don't have enough smiles to buy this upgrade!";
     }
 }
 
 function toggleUpgrades(event) {
     doubleclickError.textContent = "";
     persecondError.textContent = "";
-    if (upgradeOn1 = true) {
+    if (upgradeOn = true) {
         doubleclickBtn.hidden = true;
-        upgradeOn1 = false;
+        persecond.hidden = true;
+        upgradeOn = false;
     }
-
+   
 }
-viewupgradeBtn.addEventListener("click", upgradeshow1);
-viewupgradeBtn.addEventListener("click", upgradeshow2);
+niceBtn.addEventListener("click", upgradeshow1);
+niceBtn.addEventListener("click", upgradeshow2);
+viewupgradeBtn.addEventListener("click", toggleUpgrades);
 doubleclickBtn.addEventListener("click", doubleclicks);
 persecond.addEventListener("click", letterpersecond);
