@@ -51,8 +51,12 @@ let viewupgradeBtn = document.getElementById("viewupgrade-btn");
 let doubleclickError = document.getElementById("doubleclick-error");
 let persecondError = document.getElementById("persecond-error");
 let viewupgradeError = document.getElementById("viewupgrade-error");
-let upgradeOn = false;
-
+// let upgradeOn1 = false;
+// let upgradeOn2 = false;
+// let upgradeOn3 = false;
+// let upgradeOn4 = false;
+// let upgradeOn5 = false;
+let nextUpgrade = document.getElementById("next-upgrade");
 function nice(event) {
     if (happy.hidden) {
         count += 1 + extraclick;
@@ -74,7 +78,7 @@ function upgradeshow1(event) {
         if (doubleclickBtn.hidden) {
             doubleclickBtn.hidden = false;
         }
-        upgradeOn = true;
+
     }
 }
 
@@ -83,7 +87,7 @@ function upgradeshow2(event) {
         if (persecond.hidden) {
             persecond.hidden = false;
         }
-        // upgradeOn = true;
+
     }
 }
 
@@ -115,19 +119,19 @@ function letterpersecond(event) {
         persecondError.textContent = "You don't have enough smiles to buy this upgrade!";
     }
 }
-
-function toggleUpgrades(event) {
-    doubleclickError.textContent = "";
-    persecondError.textContent = "";
-    if (upgradeOn = true) {
-        doubleclickBtn.hidden = true;
-        persecond.hidden = true;
-        upgradeOn = false;
+function nextupgrade(event) {
+    if (count < 20) {
+        nextUpgrade.textContent = "20 clicks";
     }
-   
+    else if (count >= 20) {
+        if (count < 100) {
+            nextUpgrade.textContent = "100 clicks";
+        }
+    }
 }
+
+niceBtn.addEventListener("click", nextupgrade);
 niceBtn.addEventListener("click", upgradeshow1);
 niceBtn.addEventListener("click", upgradeshow2);
-viewupgradeBtn.addEventListener("click", toggleUpgrades);
 doubleclickBtn.addEventListener("click", doubleclicks);
 persecond.addEventListener("click", letterpersecond);
