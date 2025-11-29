@@ -47,15 +47,10 @@ let persecond = document.getElementById("persecond-btn");
 let doubleclickBtn = document.getElementById("doubleclick-btn");
 let extraclick = 0;
 let extrapersecond = 0;
-let viewupgradeBtn = document.getElementById("viewupgrade-btn");
 let doubleclickError = document.getElementById("doubleclick-error");
 let persecondError = document.getElementById("persecond-error");
-let viewupgradeError = document.getElementById("viewupgrade-error");
-// let upgradeOn1 = false;
-// let upgradeOn2 = false;
-// let upgradeOn3 = false;
-// let upgradeOn4 = false;
-// let upgradeOn5 = false;
+let fivepersecondBtn = document.getElementById("5persecond-btn");
+let fivepersecondError = document.getElementById("5persecond-error");
 let nextUpgrade = document.getElementById("next-upgrade");
 function nice(event) {
     if (happy.hidden) {
@@ -91,6 +86,14 @@ function upgradeshow2(event) {
     }
 }
 
+function upgradeshow3(event) {
+    if (count > 499) {
+        if (fivepersecondBtn.hidden) {
+            fivepersecondBtn.hidden = false;
+        }
+    }
+}
+
 function doubleclicks() {
     if (count > 19) {
         doubleclickError.textContent = "";
@@ -119,6 +122,19 @@ function letterpersecond(event) {
         persecondError.textContent = "You don't have enough smiles to buy this upgrade!";
     }
 }
+function fivepersecond(event) {
+    if (count > 499) {
+        setTimeout(() => {
+            count -= 500;
+            extrapersecond += 4;
+        }, 0);
+        setInterval(() => {
+            count += 1 + extrapersecond;
+            People.textContent = count;
+        }, 1000);
+    }
+}
+
 function nextupgrade(event) {
     if (count < 20) {
         nextUpgrade.textContent = "20 clicks";
@@ -133,5 +149,7 @@ function nextupgrade(event) {
 niceBtn.addEventListener("click", nextupgrade);
 niceBtn.addEventListener("click", upgradeshow1);
 niceBtn.addEventListener("click", upgradeshow2);
+niceBtn.addEventListener("click", upgradeshow3);
 doubleclickBtn.addEventListener("click", doubleclicks);
 persecond.addEventListener("click", letterpersecond);
+fivepersecondBtn.addEventListener("click", fivepersecond);
