@@ -72,6 +72,7 @@ niceBtn.addEventListener("click", nice);
 
 function upgradeshow1(event) {
     if (count > 19) {
+        doubleclickError.textContent = "";
         if (doubleclickBtn.hidden) {
             doubleclickBtn.hidden = false;
         }
@@ -81,6 +82,7 @@ function upgradeshow1(event) {
 
 function upgradeshow2(event) {
     if (count > 99) {
+        persecondError.textContent = "";
         if (persecond.hidden) {
             persecond.hidden = false;
         }
@@ -90,6 +92,7 @@ function upgradeshow2(event) {
 
 function upgradeshow3(event) {
     if (count > 499) {
+        tenpersecondError.textContent = "";
         if (tenpersecondBtn.hidden) {
             tenpersecondBtn.hidden = false;
         }
@@ -97,6 +100,7 @@ function upgradeshow3(event) {
 }
 function upgradeshow4(event) {
     if (count > 999) {
+        hundredpersecondError.textContent = "";
         if (hundredpersecondBtn.hidden) {
             hundredpersecondBtn.hidden = false;
         }
@@ -104,7 +108,7 @@ function upgradeshow4(event) {
 }
 function doubleclicks() {
     if (count > 19) {
-        doubleclickError.textContent = "";
+
         setTimeout(() => {
             count -= 20;
             People.textContent = count;
@@ -123,7 +127,7 @@ function letterpersecond(event) {
             extrapersecond += 1;
         }, 0);
         setInterval(() => {
-            count += 1 + extrapersecond;
+            count += extrapersecond;
             People.textContent = count;
         }, 1000);
     } else if (count < 100) {
@@ -134,10 +138,10 @@ function tenpersecond(event) {
     if (count > 499) {
         setTimeout(() => {
             count -= 500;
-            extrapersecond += 9;
+            extrapersecond += 10;
         }, 0);
         setInterval(() => {
-            count += 1 + extrapersecond;
+            count += extrapersecond;
             People.textContent = count;
         }, 1000);
     } else if (count < 500) {
@@ -148,10 +152,10 @@ function hundredpersecond(event) {
     if (count > 999) {
         setTimeout(() => {
             count -= 1000;
-            extrapersecond += 99;
+            extrapersecond += 100;
         }, 0);
         setInterval(() => {
-            count += 1 + extrapersecond;
+            count += extrapersecond;
             People.textContent = count;
         }, 1000);
     }
@@ -167,18 +171,24 @@ function nextupgrade(event) {
             nextUpgrade.textContent = "100 clicks";
         }
     }
-    else if (count >= 100) {
+
+}
+function nextupgrade2(event) {
+    if (count >= 100) {
         if (count < 500) {
             nextUpgrade.textContent = "500 clicks";
         }
     }
-    else if (count >= 500) {
+}
+function nextupgrade3(event) {
+    if (count >= 500) {
         if (count < 1000) {
             nextUpgrade.textContent = "1000 clicks";
         }
     }
 }
-
+niceBtn.addEventListener("click", nextupgrade3);
+niceBtn.addEventListener("click", nextupgrade2);
 niceBtn.addEventListener("click", nextupgrade);
 niceBtn.addEventListener("click", upgradeshow1);
 niceBtn.addEventListener("click", upgradeshow2);
