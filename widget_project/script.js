@@ -70,6 +70,13 @@ function nice(event) {
         sad.hidden = false;
         happy.hidden = true;
     }, 400);
+    setInterval(() => {
+        if (count > 9999) {
+            if (thanksgivingBtn.hidden) {
+                thanksgivingBtn.hidden = false;
+            }
+        }
+    }, 1000);
 }
 niceBtn.addEventListener("click", nice);
 
@@ -107,13 +114,7 @@ function upgradeshow4(event) {
         }
     }
 }
-function upgradeshow5(event) {
-    if (count > 9999) {
-        if (thanksgivingBtn.hidden) {
-            thanksgivingBtn.hidden = false;
-        }
-    }
-}
+
 function doubleclicks(event) {
     if (count > 19) {
 
@@ -123,6 +124,11 @@ function doubleclicks(event) {
         }, 0);
         setInterval(() => {
             doubleclickError.textContent = "";
+            if (count > 9999) {
+                if (thanksgivingBtn.hidden) {
+                    thanksgivingBtn.hidden = false;
+                }
+            }
         }, 1000);
         extraclick += 1;
     }
@@ -141,6 +147,11 @@ function letterpersecond(event) {
             count += extrapersecond;
             People.textContent = count;
             persecondError.textContent = "";
+            if (count > 9999) {
+                if (thanksgivingBtn.hidden) {
+                    thanksgivingBtn.hidden = false;
+                }
+            }
         }, 1000);
     } else if (count < 100) {
         persecondError.textContent = "You don't have enough smiles to buy this upgrade!";
@@ -156,6 +167,11 @@ function tenpersecond(event) {
             count += extrapersecond;
             People.textContent = count;
             tenpersecondError.textContent = "";
+            if (count > 9999) {
+                if (thanksgivingBtn.hidden) {
+                    thanksgivingBtn.hidden = false;
+                }
+            }
         }, 1000);
     } else if (count < 500) {
         tenpersecondError.textContent = "You don't have enough smiles to buy this upgrade!";
@@ -171,6 +187,11 @@ function hundredpersecond(event) {
             count += extrapersecond;
             People.textContent = count;
             hundredpersecondError.textContent = "";
+            if (count > 9999) {
+                if (thanksgivingBtn.hidden) {
+                    thanksgivingBtn.hidden = false;
+                }
+            }
         }, 1000);
     } else if (count < 1000) {
         hundredpersecondError.textContent = "You don't have enough smiles to buy this upgrade!";
@@ -194,8 +215,8 @@ function thanksgiving(event) {
         sad.hidden = true;
         happy.hidden = true;
         thumbsUp.hidden = false;
-        Days.hidden= true;
-        
+        Days.hidden = true;
+
     }
 }
 
@@ -237,7 +258,6 @@ niceBtn.addEventListener("click", upgradeshow1);
 niceBtn.addEventListener("click", upgradeshow2);
 niceBtn.addEventListener("click", upgradeshow3);
 niceBtn.addEventListener("click", upgradeshow4);
-hundredpersecondBtn.addEventListener("click", upgradeshow5);
 thanksgivingBtn.addEventListener("click", thanksgiving);
 doubleclickBtn.addEventListener("click", doubleclicks);
 persecond.addEventListener("click", letterpersecond);
