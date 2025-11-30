@@ -56,6 +56,8 @@ let hundredpersecondError = document.getElementById("100persecond-error");
 let thanksgivingBtn = document.getElementById("thanksgiving-btn");
 let nextupgradeLabel = document.getElementById("nextupgrade");
 let viewupgradeLabel = document.getElementById("viewupgrade");
+let thumbsUp = document.getElementById("thumbsup");
+let Days = document.getElementById("days");
 let nextUpgrade = document.getElementById("next-upgrade");
 function nice(event) {
     if (happy.hidden) {
@@ -188,7 +190,12 @@ function thanksgiving(event) {
         viewupgradeLabel.textContent = "you have spread so much kindness today! thank you!";
         extrapersecond = 0;
         count = 0;
-        People.textContent = "";
+        People.hidden = true;
+        sad.hidden = true;
+        happy.hidden = true;
+        thumbsUp.hidden = false;
+        Days.hidden= true;
+        
     }
 }
 
