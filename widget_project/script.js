@@ -53,6 +53,9 @@ let tenpersecondBtn = document.getElementById("10persecond-btn");
 let tenpersecondError = document.getElementById("10persecond-error");
 let hundredpersecondBtn = document.getElementById("100persecond-btn");
 let hundredpersecondError = document.getElementById("100persecond-error");
+let thanksgivingBtn = document.getElementById("thanksgiving-btn");
+let nextupgradeLabel = document.getElementById("nextupgrade");
+let viewupgradeLabel = document.getElementById("viewupgrade");
 let nextUpgrade = document.getElementById("next-upgrade");
 function nice(event) {
     if (happy.hidden) {
@@ -72,7 +75,6 @@ niceBtn.addEventListener("click", nice);
 
 function upgradeshow1(event) {
     if (count > 19) {
-        doubleclickError.textContent = "";
         if (doubleclickBtn.hidden) {
             doubleclickBtn.hidden = false;
         }
@@ -82,7 +84,6 @@ function upgradeshow1(event) {
 
 function upgradeshow2(event) {
     if (count > 99) {
-        persecondError.textContent = "";
         if (persecond.hidden) {
             persecond.hidden = false;
         }
@@ -92,7 +93,6 @@ function upgradeshow2(event) {
 
 function upgradeshow3(event) {
     if (count > 499) {
-        tenpersecondError.textContent = "";
         if (tenpersecondBtn.hidden) {
             tenpersecondBtn.hidden = false;
         }
@@ -100,19 +100,28 @@ function upgradeshow3(event) {
 }
 function upgradeshow4(event) {
     if (count > 999) {
-        hundredpersecondError.textContent = "";
         if (hundredpersecondBtn.hidden) {
             hundredpersecondBtn.hidden = false;
         }
     }
 }
-function doubleclicks() {
+function upgradeshow5(event) {
+    if (count > 9999) {
+        if (thanksgivingBtn.hidden) {
+            thanksgivingBtn.hidden = false;
+        }
+    }
+}
+function doubleclicks(event) {
     if (count > 19) {
 
         setTimeout(() => {
             count -= 20;
             People.textContent = count;
         }, 0);
+        setInterval(() => {
+            doubleclickError.textContent = "";
+        }, 1000);
         extraclick += 1;
     }
     else if (count < 20) {
@@ -129,6 +138,7 @@ function letterpersecond(event) {
         setInterval(() => {
             count += extrapersecond;
             People.textContent = count;
+            persecondError.textContent = "";
         }, 1000);
     } else if (count < 100) {
         persecondError.textContent = "You don't have enough smiles to buy this upgrade!";
@@ -143,6 +153,7 @@ function tenpersecond(event) {
         setInterval(() => {
             count += extrapersecond;
             People.textContent = count;
+            tenpersecondError.textContent = "";
         }, 1000);
     } else if (count < 500) {
         tenpersecondError.textContent = "You don't have enough smiles to buy this upgrade!";
@@ -157,16 +168,34 @@ function hundredpersecond(event) {
         setInterval(() => {
             count += extrapersecond;
             People.textContent = count;
+            hundredpersecondError.textContent = "";
         }, 1000);
+    } else if (count < 1000) {
+        hundredpersecondError.textContent = "You don't have enough smiles to buy this upgrade!";
     }
 
+}
+function thanksgiving(event) {
+    if (count > 9999) {
+        count.hidden = true;
+        doubleclickBtn.hidden = true;
+        persecond.hidden = true;
+        tenpersecondBtn.hidden = true;
+        hundredpersecondBtn.hidden = true;
+        thanksgivingBtn.hidden = true;
+        niceBtn.hidden = true;
+        nextupgradeLabel.textContent = "";
+        viewupgradeLabel.textContent = "you have spread so much kindness today! thank you!";
+        extrapersecond = 0;
+        count = 0;
+        People.textContent = "";
+    }
 }
 
 function nextupgrade(event) {
     if (count < 20) {
         nextUpgrade.textContent = "20 clicks";
-    }
-    else if (count >= 20) {
+    } else if (count >= 20) {
         if (count < 100) {
             nextUpgrade.textContent = "100 clicks";
         }
@@ -187,6 +216,13 @@ function nextupgrade3(event) {
         }
     }
 }
+function nextupgrade4(event) {
+    if (count >= 1000) {
+        if (count < 10000) {
+            nextUpgrade.textContent = "10,000 clicks";
+        }
+    }
+}
 niceBtn.addEventListener("click", nextupgrade3);
 niceBtn.addEventListener("click", nextupgrade2);
 niceBtn.addEventListener("click", nextupgrade);
@@ -194,6 +230,8 @@ niceBtn.addEventListener("click", upgradeshow1);
 niceBtn.addEventListener("click", upgradeshow2);
 niceBtn.addEventListener("click", upgradeshow3);
 niceBtn.addEventListener("click", upgradeshow4);
+hundredpersecondBtn.addEventListener("click", upgradeshow5);
+thanksgivingBtn.addEventListener("click", thanksgiving);
 doubleclickBtn.addEventListener("click", doubleclicks);
 persecond.addEventListener("click", letterpersecond);
 tenpersecondBtn.addEventListener("click", tenpersecond);
