@@ -1,4 +1,4 @@
-const Word1 = document.getElementById("word1");
+ const Word1 = document.getElementById("word1");
 const Word2 = document.getElementById("word2");
 const Word3 = document.getElementById("word3");
 const Word4 = document.getElementById("word4");
