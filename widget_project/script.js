@@ -1,4 +1,4 @@
- const Word1 = document.getElementById("word1");
+const Word1 = document.getElementById("word1");
 const Word2 = document.getElementById("word2");
 const Word3 = document.getElementById("word3");
 const Word4 = document.getElementById("word4");
@@ -59,7 +59,7 @@ let viewupgradeLabel = document.getElementById("viewupgrade");
 let thumbsUp = document.getElementById("thumbsup");
 let Days = document.getElementById("days");
 let nextUpgrade = document.getElementById("next-upgrade");
-function nice(event) {
+function nice( ) {
     if (happy.hidden) {
         count += 1 + extraclick;
         People.textContent = count;
@@ -76,46 +76,31 @@ function nice(event) {
                 thanksgivingBtn.hidden = false;
             }
         }
-    }, 1000);
+        if (count > 20) {
+            if (doubleclickBtn.hidden) {
+                doubleclickBtn.hidden = false;
+            }
+        }
+        if (count > 99) {
+            if (persecond.hidden) {
+                persecond.hidden = false;
+            }
+        }
+        if (count > 499) {
+            if (tenpersecondBtn.hidden) {
+                tenpersecondBtn.hidden = false;
+            }
+        }
+        if (count > 999) {
+            if (hundredpersecondBtn.hidden) {
+                hundredpersecondBtn.hidden = false;
+            }
+        }
+    }, 500); 
 }
 niceBtn.addEventListener("click", nice);
 
-
-
-function upgradeshow1(event) {
-    if (count > 19) {
-        if (doubleclickBtn.hidden) {
-            doubleclickBtn.hidden = false;
-        }
-
-    }
-}
-
-function upgradeshow2(event) {
-    if (count > 99) {
-        if (persecond.hidden) {
-            persecond.hidden = false;
-        }
-
-    }
-}
-
-function upgradeshow3(event) {
-    if (count > 499) {
-        if (tenpersecondBtn.hidden) {
-            tenpersecondBtn.hidden = false;
-        }
-    }
-}
-function upgradeshow4(event) {
-    if (count > 999) {
-        if (hundredpersecondBtn.hidden) {
-            hundredpersecondBtn.hidden = false;
-        }
-    }
-}
-
-function doubleclicks(event) {
+function doubleclicks() {
     if (count > 19) {
 
         setTimeout(() => {
@@ -137,7 +122,7 @@ function doubleclicks(event) {
     }
 }
 
-function letterpersecond(event) {
+function letterpersecond() {
     if (count > 99) {
         setTimeout(() => {
             count -= 100;
@@ -157,7 +142,7 @@ function letterpersecond(event) {
         persecondError.textContent = "You don't have enough smiles to buy this upgrade!";
     }
 }
-function tenpersecond(event) {
+function tenpersecond() {
     if (count > 499) {
         setTimeout(() => {
             count -= 500;
@@ -177,7 +162,7 @@ function tenpersecond(event) {
         tenpersecondError.textContent = "You don't have enough smiles to buy this upgrade!";
     }
 }
-function hundredpersecond(event) {
+function hundredpersecond() {
     if (count > 999) {
         setTimeout(() => {
             count -= 1000;
@@ -198,7 +183,7 @@ function hundredpersecond(event) {
     }
 
 }
-function thanksgiving(event) {
+function thanksgiving() {
     if (count > 9999) {
         count.hidden = true;
         doubleclickBtn.hidden = true;
@@ -220,7 +205,7 @@ function thanksgiving(event) {
     }
 }
 
-function nextupgrade(event) {
+function nextupgrade() {
     if (count < 20) {
         nextUpgrade.textContent = "20 clicks";
     } else if (count >= 20) {
@@ -230,21 +215,21 @@ function nextupgrade(event) {
     }
 
 }
-function nextupgrade2(event) {
+function nextupgrade2() {
     if (count >= 100) {
         if (count < 500) {
             nextUpgrade.textContent = "500 clicks";
         }
     }
 }
-function nextupgrade3(event) {
+function nextupgrade3() {
     if (count >= 500) {
         if (count < 1000) {
             nextUpgrade.textContent = "1000 clicks";
         }
     }
 }
-function nextupgrade4(event) {
+function nextupgrade4() {
     if (count >= 1000) {
         if (count < 10000) {
             nextUpgrade.textContent = "10,000 clicks";
@@ -254,10 +239,6 @@ function nextupgrade4(event) {
 niceBtn.addEventListener("click", nextupgrade3);
 niceBtn.addEventListener("click", nextupgrade2);
 niceBtn.addEventListener("click", nextupgrade);
-niceBtn.addEventListener("click", upgradeshow1);
-niceBtn.addEventListener("click", upgradeshow2);
-niceBtn.addEventListener("click", upgradeshow3);
-niceBtn.addEventListener("click", upgradeshow4);
 thanksgivingBtn.addEventListener("click", thanksgiving);
 doubleclickBtn.addEventListener("click", doubleclicks);
 persecond.addEventListener("click", letterpersecond);
