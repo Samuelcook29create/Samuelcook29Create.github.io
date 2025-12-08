@@ -16,74 +16,31 @@
     <div class="flex">
         <h1>Welcome to my personal Webfolio</h1>
         <nav>
-            <a href="games.html">Games</a>
+            <a href="/Samuelcook29Create.github.io/games">Games</a>
             <a href="languages.html">languages</a>
             <a href="Book.html">books</a>
             <a href="hobbies.html">My hobbies</a>
         </nav>
     </div>
-    <p>In this document you will see that I have multiple <strong>games,</strong><em> books</em> and
+    <p id="purple">In this document you will see that I have multiple <strong>games,</strong><em> books</em> and
         hobbies that I enjoy</p>
-    <ul class="glow">
+    <ol class="glow">
+        <p>other websites</p>
         <li>1</li>
         <li>2</li>
         <li>3</li>
         <li>4</li>
         <li>5</li>
         <li>6</li>
-    </ul>
+    </ol>
     <p id="ballon">🎈</p>
     <button id="inflate-button">INFLATE</button>
     <button id="deflate-button">DEFLATE</button>
     <button id="new-button">NEW BALLON(work in progress)</button>
-    <script>
-        let fontSize = 10;
-        let ballonEl = document.getElementById("ballon");
-        let inflateButton = document.getElementById("inflate-button");
-        let deflateButton = document.getElementById("deflate-button");
-        let newBallon = document.getElementById("new-button")
-        function Inflate(event) {
 
-            if (fontSize > 99) {
-                ballonEl.textContent = "💥";
-                inflateButton.removeEventListener("click", Inflate);
-                deflateButton.removeEventListener("click", Deflate);
-            } else if (fontSize < 100) {
-                fontSize *= 1.1;
-                ballonEl.style.fontSize = fontSize + "px";
-            }
-
-
-        }
-        function Deflate(event) {
-            fontSize /= 1.1;
-            ballonEl.style.fontSize = fontSize + "px";
-            if (fontSize < 1) {
-                ballonEl.textContent = "🕳️";
-                inflateButton.removeEventListener("click", Inflate);
-                deflateButton.removeEventListener("click", Deflate);
-                setInterval(() => {
-                    fontSize += 10;
-                    ballonEl.style.fontSize = fontSize + "px";
-                }, 100);
-                ballonEl.style.textDecoration = "underline black";
-            }
-        }
-
-        function Ballon() {
-            ballonEl.textContent = "🎈";
-            ballonEl.style.fontSize = 10;
-            ballonEl.style.fontSize = 10 + "px";
-            inflateButton.addEventListener("click", Inflate);
-            deflateButton.addEventListener("click", Deflate);
-        }
-        newBallon.addEventListener("click", Ballon)
-        inflateButton.addEventListener("click", Inflate);
-        deflateButton.addEventListener("click", Deflate);
-    </script>
     <audio controls src="Audio/sam_song.wav" class="box"></audio>
     <img src="Pictures/treeredwood.jpg" alt="redwood tree">
-
+    <script src="script.js"></script>
 
 </body>
 

@@ -41,7 +41,7 @@ p {
     font-family: "Audiowide";
     font-style: italic;
     font-weight: bolder;
-    text-decoration: underline overline rgb(143, 22, 241)
+   
 }
 
 
@@ -56,9 +56,12 @@ a {
     padding-bottom: 5px;
 }
 
-.black {
+#black {
     color: black;
     text-decoration: underline overline black;
+}
+#purple {
+     text-decoration: underline overline rgb(143, 22, 241)
 }
 
 h2 {

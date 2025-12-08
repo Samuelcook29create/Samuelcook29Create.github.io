@@ -1,0 +1,27 @@
+html {
+    --text: #00fff7;
+    --background: #000000;
+    --primary: #002dd1;
+    --secondary: #00aaff;
+    --accent: #1ce154;
+}
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+h1 {
+    color: var(--secondary);
+    font-family: "Kenia";
+    text-shadow: 1px .5px 3px var(--accent);
+    font-size: 50px;
+    margin: 10px;
+    min-width: 500px;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 500px;
+    border: 5px solid #24f1b4;
+    padding-bottom: 10px;
+}
