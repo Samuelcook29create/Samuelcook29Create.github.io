@@ -30,6 +30,13 @@ h1 {
     padding-bottom: 10px;
 }
 
+.website {
+    color: var(--text);
+    padding: 0px;
+    border: 0px;
+    font-size: 20px;
+}
+
 img {
     padding: 4px;
     border: 4px solid var(--accent);
@@ -41,13 +48,13 @@ p {
     font-family: "Audiowide";
     font-style: italic;
     font-weight: bolder;
-   
+
 }
 
 
 a {
     color: var(--text);
-    border: 2px solid indianred;
+    border: 4px solid indianred;
     font-family: "Kenia";
     font-size: 30px;
     padding-left: 10px;
@@ -56,17 +63,14 @@ a {
     padding-bottom: 5px;
 }
 
-#black {
-    color: black;
-    text-decoration: underline overline black;
-}
+
 #purple {
-     text-decoration: underline overline rgb(143, 22, 241)
+    text-decoration: underline rgb(143, 22, 241);
 }
 
 h2 {
     color: #00ffd5;
-    text-shadow: 2px 1px 3px white
+    text-shadow: 2px 1px 3px white;
 }
 
 .describe {
