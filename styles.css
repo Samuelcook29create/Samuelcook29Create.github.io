@@ -78,3 +78,30 @@ h2 {
     text-decoration: underline overline black;
     /* flex-wrap: wrap; */
 }
+
+/* Define the animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation and link it to the scroll timeline */
+img{
+    animation: fade-in linear forwards 1s;
+    animation-timeline: view();
+    /* Links animation to the element's visibility in the viewport */
+    animation-range: entry 0% cover 50%;
+    /* Starts at the entry point, ends when 50% covered */
+}
+
+nav {
+    position: sticky;
+    top: 12px;
+    z-index: 2;
+    background-color: black;
+}
