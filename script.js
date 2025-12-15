@@ -21,13 +21,25 @@ function inflate() {
 function Deflate() {
     fontSize /= 1.1;
     ballonEl.style.fontSize = fontSize + "px";
+    if (fontSize < 5) {
+        fontSize = 5;
+        ballonEl.textContent = "🪬";
+        setInterval(() => {
+
+            fontSize *= 1.1;
+            ballonEl.style.fontSize = fontSize + "px";
+
+        }, 500);
+
+    }
 }
 
 function Ballon() {
     inflateButton.addEventListener("click", inflate);
     deflateButton.addEventListener("click", Deflate);
- 
+
     ballonEl.textContent = "🎈";
+    fontSize = 16
     ballonEl.style.fontSize = 16 + "px";
 }
 
