@@ -46,7 +46,13 @@ a {
 
 
 }
-
+.list{
+    color: var(--text);
+    font-size: 16px;
+    font-family: "";
+    border: 1px;
+    text-decoration: underline red;
+}
 
 /* Define the animation */
 @keyframes fade-in {
