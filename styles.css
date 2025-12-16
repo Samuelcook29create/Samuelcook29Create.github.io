@@ -24,7 +24,7 @@ h1 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    align-items: space-around;
+
     min-width: 500px;
     border: 5px solid #24f1b4;
     padding-bottom: 10px;

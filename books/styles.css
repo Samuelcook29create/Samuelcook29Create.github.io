@@ -39,7 +39,7 @@ a {
 .flex {
     display: flex;
     align-items: center;
-    align-Items: space-around;
+ 
     flex-wrap: wrap;
     border: 5px solid #24f1b4;
     padding-bottom: 10px;
